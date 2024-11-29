@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción a Carrera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #dc2626;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dc2626;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #dc2626;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .radio-group, .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #dc2626;
+        }
+
+        button {
+            background: linear-gradient(135deg, #dc2626 0%, rgb(70, 11, 11) 100%);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 10px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Formulario de Inscripción a Carrera</h1>
+            <p>Complete todos los campos requeridos para procesar su inscripción</p>
+        </div>
+
+        <form class="form-container">
+            <!-- Selección de Carrera -->
+            <div class="section">
+                <h2 class="section-title">Selección de Carrera</h2>
+                <div class="form-group">
+                    <label>¿En qué carrera desea inscribirse?</label>
+                    <select required>
+                        <option value="">Seleccione una carrera</option>
+                        <option>ADMINISTRACIÓN DE EMPRESAS</option>
+                        <option>BACTERIOLOGÍA</option>
+                        <option>CONTADURÍA PÚBLICA</option>
+                        <option>DERECHO</option>
+                        <option>ENFERMERÍA</option>
+                        <option>INGENIERIA DE SISTEMAS</option>
+                        <option>INSTRUMENTACIÓN QUIRÚRGICA | CARTAGENA</option>
+                        <option>LICENCIATURA EN EDUCACIÓN INFANTIL</option>
+                        <option>MEDICINA</option>
+                        <option>ODONTOLOGÍA</option>
+                        <option>TECNOLOGÍA EN ATENCIÓN PREHOSPITALARIA</option>
+                        <option>TECNOLOGÍA EN ESTÉTICA Y COSMETOLOGÍA</option>
+                        <option>TECNOLOGÍA EN MECÁNICA DENTAL</option>
+                        <option>TRABAJO SOCIAL</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Información Personal -->
+            <div class="section">
+                <h2 class="section-title">Información Personal</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Primer Nombre</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Segundo Nombre</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Primer Apellido</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Segundo Apellido</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de Nacimiento</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Documento</label>
+                        <select required>
+                            <option value="">Seleccione tipo</option>
+                            <option>Cédula de Ciudadanía</option>
+                            <option>Cédula de Extranjería</option>
+                            <option>Tarjeta de Identidad</option>
+                            <option>Pasaporte</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Número de Documento</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo Biológico</label>
+                        <select required>
+                            <option value="">Seleccione sexo</option>
+                            <option>Masculino</option>
+                            <option>Femenino</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información de Contacto -->
+            <div class="section">
+                <h2 class="section-title">Información de Contacto</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Estado Civil</label>
+                        <select required>
+                            <option value="">Seleccione estado</option>
+                            <option>Soltero/a</option>
+                            <option>Casado/a</option>
+                            <option>Divorciado/a</option>
+                            <option>Viudo/a</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel">
+                    </div>
+                    <div class="form-group">
+                        <label>Celular</label>
+                        <input type="tel" required>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>País</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ciudad</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Encuesta Personal -->
+            <div class="section">
+                <h2 class="section-title">Encuesta Personal</h2>
+                
+                <div class="form-group">
+                    <label>¿Tiene usted hijos?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="hijos" value="0">
+                            No tengo
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="hijos" value="1">
+                            1 hijo
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="hijos" value="2">
+                            2 hijos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="hijos" value="3">
+                            3 hijos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="hijos" value="4">
+                            4 hijos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="hijos" value="5+">
+                            Más de 4 hijos
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Se reconoce como parte de alguna de las siguientes poblaciones?</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Ninguna
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Indígenas
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Afrocolombianos
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Raizales
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Pueblo ROM o Gitano
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Cuenta con alguna discapacidad?</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Ninguna
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Discapacidad motriz
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Discapacidad sorda
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Discapacidad cognitiva
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Sordoceguera
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Trastorno de la voz y el habla
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            Otra
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Diga cuál es su otra discapacidad?</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Usted trabaja actualmente?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="trabajo">
+                            No estoy trabajando
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="trabajo">
+                            Sí, empleado
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="trabajo">
+                            Sí, independiente
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button
+            <button type="button" id="enviar-btn">Enviar Inscripción</button>
+
+        </form>
+    </div>
+    <script>
+        // Seleccionamos el botón por su ID
+        const botonEnviar = document.getElementById('enviar-btn');
+    
+        // Agregamos un evento al botón
+        botonEnviar.addEventListener('click', function() {
+            // Seleccionamos todos los campos requeridos dentro del formulario
+            const camposRequeridos = document.querySelectorAll('form [required]');
+            let formularioCompleto = true;
+    
+            // Validamos cada campo requerido
+            camposRequeridos.forEach(function(campo) {
+                if (!campo.value.trim()) {
+                    formularioCompleto = false;
+                    campo.style.borderColor = "red"; // Resaltar campos vacíos en rojo
+                } else {
+                    campo.style.borderColor = "blue"; // Quitar el borde rojo si está completo
+                }
+            });
+    
+            // Si todos los campos están completos, mostramos la alerta
+            if (formularioCompleto) {
+                alert('¡Formulario completado correctamente!');
+                // Aquí podrías enviar el formulario si necesitas hacerlo manualmente con JS
+                // document.querySelector('form').submit();
+            } else {
+                alert('Por favor, complete todos los campos requeridos.');
+            }
+        });
+    </script>
+    
+</body>
+</html>
